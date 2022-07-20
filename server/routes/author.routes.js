@@ -1,4 +1,4 @@
-const PersonController = require('../controllers/author.controller');
+const AuthorController = require('../controllers/author.controller');
 module.exports = function (app) {
 	// ! READ ALL
 	app.get('/api/authors/', AuthorController.findAllAuthors);
