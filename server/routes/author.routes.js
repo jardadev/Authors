@@ -1,7 +1,7 @@
 const AuthorController = require('../controllers/author.controller');
 module.exports = function (app) {
 	// ! READ ALL
-	// app.get('/api/authors/', AuthorController.findAllAuthors);
+	app.get('/api/authors/', AuthorController.findAllAuthors);
 	// ! READ ONE
 	// app.get('/api/authors/:id', AuthorController.findOneSingleAuthor);
 	// ! CREATE

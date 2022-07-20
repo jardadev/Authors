@@ -6,43 +6,43 @@ module.exports.createAuthor = (request, response) => {
 		name,
 	})
 		.then((author) => response.json(author))
-		.catch((err) => response.status(400).json(err)); // Will return error to user
+		.catch((err) => response.status(400).json(err)); // Will return error to author
 };
 
-// module.exports.findAllUsers = (req, res) => {
-// 	User.find()
-// 		.then((allDaUsers) => res.json({ users: allDaUsers }))
+module.exports.findAllAuthors = (req, res) => {
+	Author.find()
+		.then((allDaAuthors) => res.json({ authors: allDaAuthors }))
+		.catch((err) =>
+			res.json({ message: 'Something went wrong', error: err })
+		);
+};
+
+// module.exports.findOneSingleAuthor = (req, res) => {
+// 	Author.findOne({ _id: req.params.id })
+// 		.then((oneSingleAuthor) => res.json({ author: oneSingleAuthor }))
 // 		.catch((err) =>
 // 			res.json({ message: 'Something went wrong', error: err })
 // 		);
 // };
 
-// module.exports.findOneSingleUser = (req, res) => {
-// 	User.findOne({ _id: req.params.id })
-// 		.then((oneSingleUser) => res.json({ user: oneSingleUser }))
+// module.exports.createNewAuthor = (req, res) => {
+// 	Author.create(req.body)
+// 		.then((newlyCreatedAuthor) => res.json({ author: newlyCreatedAuthor }))
 // 		.catch((err) =>
 // 			res.json({ message: 'Something went wrong', error: err })
 // 		);
 // };
 
-// module.exports.createNewUser = (req, res) => {
-// 	User.create(req.body)
-// 		.then((newlyCreatedUser) => res.json({ user: newlyCreatedUser }))
+// module.exports.updateExistingAuthor = (req, res) => {
+// 	Author.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
+// 		.then((updatedAuthor) => res.json({ author: updatedAuthor }))
 // 		.catch((err) =>
 // 			res.json({ message: 'Something went wrong', error: err })
 // 		);
 // };
 
-// module.exports.updateExistingUser = (req, res) => {
-// 	User.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
-// 		.then((updatedUser) => res.json({ user: updatedUser }))
-// 		.catch((err) =>
-// 			res.json({ message: 'Something went wrong', error: err })
-// 		);
-// };
-
-// module.exports.deleteAnExistingUser = (req, res) => {
-// 	User.deleteOne({ _id: req.params.id })
+// module.exports.deleteAnExistingAuthor = (req, res) => {
+// 	Author.deleteOne({ _id: req.params.id })
 // 		.then((result) => res.json({ result: result }))
 // 		.catch((err) =>
 // 			res.json({ message: 'Something went wrong', error: err })
