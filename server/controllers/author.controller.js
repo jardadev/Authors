@@ -17,13 +17,13 @@ module.exports.findAllAuthors = (req, res) => {
 		);
 };
 
-// module.exports.findOneSingleAuthor = (req, res) => {
-// 	Author.findOne({ _id: req.params.id })
-// 		.then((oneSingleAuthor) => res.json({ author: oneSingleAuthor }))
-// 		.catch((err) =>
-// 			res.json({ message: 'Something went wrong', error: err })
-// 		);
-// };
+module.exports.findOneSingleAuthor = (req, res) => {
+	Author.findOne({ _id: req.params.id })
+		.then((oneSingleAuthor) => res.json({ author: oneSingleAuthor }))
+		.catch((err) =>
+			res.json({ message: 'Something went wrong', error: err })
+		);
+};
 
 // module.exports.createNewAuthor = (req, res) => {
 // 	Author.create(req.body)

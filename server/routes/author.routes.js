@@ -3,7 +3,7 @@ module.exports = function (app) {
 	// ! READ ALL
 	app.get('/api/authors/', AuthorController.findAllAuthors);
 	// ! READ ONE
-	// app.get('/api/authors/:id', AuthorController.findOneSingleAuthor);
+	app.get('/api/authors/:id', AuthorController.findOneSingleAuthor);
 	// ! CREATE
 	app.post('/api/authors', AuthorController.createAuthor);
 	// ! PUT
