@@ -7,7 +7,7 @@ module.exports = function (app) {
 	// ! CREATE
 	app.post('/api/authors', AuthorController.createAuthor);
 	// ! PUT
-	// app.put('/api/authors/:id', AuthorController.updateExistingAuthor);
+	app.put('/api/authors/:id', AuthorController.updateExistingAuthor);
 	// ! DELETE
-	// app.delete('/api/authors/:id', AuthorController.deleteAnExistingAuthor);
+	app.delete('/api/authors/:id', AuthorController.deleteAnExistingAuthor);
 };
