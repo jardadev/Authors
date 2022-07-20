@@ -1,6 +1,6 @@
 const { Author } = require('../models/author.model');
 
-module.exports.createauthor = (request, response) => {
+module.exports.createAuthor = (request, response) => {
 	const { name } = request.body;
 	Author.create({
 		name,

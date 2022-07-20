@@ -1,13 +1,13 @@
 const AuthorController = require('../controllers/author.controller');
 module.exports = function (app) {
 	// ! READ ALL
-	app.get('/api/authors/', AuthorController.findAllAuthors);
+	// app.get('/api/authors/', AuthorController.findAllAuthors);
 	// ! READ ONE
-	app.get('/api/authors/:id', AuthorController.findOneSingleAuthor);
+	// app.get('/api/authors/:id', AuthorController.findOneSingleAuthor);
 	// ! CREATE
-	app.post('/api/authors', PersonController.createPerson);
+	app.post('/api/authors', AuthorController.createAuthor);
 	// ! PUT
-	app.put('/api/authors/:id', AuthorController.updateExistingAuthor);
+	// app.put('/api/authors/:id', AuthorController.updateExistingAuthor);
 	// ! DELETE
-	app.delete('/api/authors/:id', AuthorController.deleteAnExistingAuthor);
+	// app.delete('/api/authors/:id', AuthorController.deleteAnExistingAuthor);
 };
