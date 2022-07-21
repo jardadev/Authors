@@ -4,9 +4,9 @@ function App() {
 	return (
 		<Routes>
 			<Route path='/product/:id' element={<Main />} />
-			{/* <Route path='/product/:id/edit' element={<Update />} />
-			
-			<Route path='*' element={<Main />} /> */}
+
+			<Route path='*' element={<Main />} /> 
+			{/* <Route path='/product/:id/edit' element={<Update />} */}
 		</Routes>
 	);
 }
