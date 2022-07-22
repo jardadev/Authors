@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import React, { useEffect } from 'react';
 
-const Main = ({ setAuthors, authors }) => {
+const Main = ({ setAuthors, authors, deleteAuthor }) => {
 	// const deleteAuthor = (authorId) => {
 	// 	axios
 	// 		.delete(`http://localhost:8080/api/author/${authorId}`)
@@ -44,7 +44,12 @@ const Main = ({ setAuthors, authors }) => {
 									<button className='btn btn-sm'>Edit</button>
 								</Link>
 
-								<button className='btn btn-sm'>Delete</button>
+								<button
+									className='btn btn-sm'
+									onClick={(e) => deleteAuthor(e, author._id)}
+								>
+									Delete
+								</button>
 							</td>
 						</tr>
 					))}

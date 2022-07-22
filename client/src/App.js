@@ -17,6 +17,7 @@ function App() {
 
 	// TODO: FORM HANDLERS
 	// * ID is passed via prop
+	// ! Update
 	const updateButtonHandler = (e, id) => {
 		//prevent default behavior of the submit
 		e.preventDefault();
@@ -31,6 +32,24 @@ function App() {
 			})
 			.catch((err) => console.log(err));
 	};
+
+	// ! DELETE
+	const removeFromDom = (productId) => {
+		setAuthors(authors.filter((product) => product._id !== productId));
+	};
+
+	const deleteButtonHandler = (e, id) => {
+		//prevent default behavior of the submit
+		e.preventDefault();
+		//make a post request to create a new product
+		axios
+			.delete(`http://localhost:8080/api/authors/${id}`)
+			.then((res) => {
+				removeFromDom(id);
+			})
+			.catch((err) => console.error(err));
+	};
+
 	return (
 		<>
 			<Routes>
@@ -52,7 +71,13 @@ function App() {
 
 				<Route
 					path='*'
-					element={<Main setAuthors={setAuthors} authors={authors} />}
+					element={
+						<Main
+							setAuthors={setAuthors}
+							authors={authors}
+							deleteAuthor={deleteButtonHandler}
+						/>
+					}
 				/>
 				{/* <Route path='/product/:id/edit' element={<Update />} */}
 			</Routes>
