@@ -24,6 +24,7 @@ const Main = ({ setAuthors, authors, deleteAuthor }) => {
 	return (
 		<div>
 			<h1 className='text-center text-lg underline'>Author List:</h1>
+			<Link to={'/authors/new'}>Create</Link>
 			<table className='table table-zebra w-full text-center'>
 				<thead>
 					<tr>
