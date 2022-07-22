@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
-const Main = () => {
+const Main = ({ setAuthors, authors }) => {
 	// const deleteAuthor = (authorId) => {
 	// 	axios
 	// 		.delete(`http://localhost:8080/api/author/${authorId}`)
@@ -11,11 +11,11 @@ const Main = () => {
 	// 		})
 	// 		.catch((err) => console.error(err));
 	// };
-	const [authors, setAuthors] = useState([]);
 	useEffect(() => {
 		axios
 			.get('http://localhost:8080/api/authors')
 			.then((res) => {
+				console.log(res.data);
 				setAuthors(res.data.authors);
 			})
 			.catch((err) => console.error(err));
@@ -40,7 +40,10 @@ const Main = () => {
 								</Link>
 							</td>
 							<td>
-								<button className='btn btn-sm'>Edit</button>
+								<Link to={`/authors/${author._id}/edit`}>
+									<button className='btn btn-sm'>Edit</button>
+								</Link>
+
 								<button className='btn btn-sm'>Delete</button>
 							</td>
 						</tr>
